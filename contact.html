@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | ChemLab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav id="onMobile">
+     <li onclick="removeMenu()" class="displayMenuClose"><ion-icon name="close"></ion-icon></li>
+         <li  ><a href="index.html"><ion-icon name="home"></ion-icon> Home</a></li>
+         <li  ><a href="equpment.html"><ion-icon name="hammer"></ion-icon> Equipments</a></li>
+         <li  ><a href="contact.html"><ion-icon name="call"></ion-icon> Contact</a></li>
+         <li  ><a href="about.html"><ion-icon name="people"></ion-icon> About</a></li>
+         
+    </nav>
+   
+   
+       <nav id="onpc">
+         <li><a href="index.html">
+           <img src="img/logo.png" alt="" srcset="" width="190px"></a>
+         </li>
+         <li class="hiddeMobile"><a href="index.html"><ion-icon name="home"></ion-icon> Home</a></li>
+         <li class="hiddeMobile"><a href="equpment.html"><ion-icon name="hammer"></ion-icon> Equipments</a></li>
+         <li class="hiddeMobile"><a href="contact.html"><ion-icon name="call"></ion-icon> Contact</a></li>
+         <li class="hiddeMobile"><a href="about.html"><ion-icon name="people"></ion-icon> About</a></li>
+         <li onclick="displayMenu()" class="displayMenu"><ion-icon name="menu"></ion-icon></li>
+       </nav>
+     </header>
+
+     <br><br><br><br><br><br>
+     <section class="info-container" style="margin-top: -40px; background: transparent">
+        <section class="contact">
+ <br><br><br><br><br>
+         
+          <div class="contact-info">
+            <div>
+            <h2>Get in Touch with ChemLab</h2>
+            <p><ion-icon name="call-sharp"></ion-icon> +251963889227</p>
+            <p><ion-icon name="mail-sharp"></ion-icon> ayfokruleul1@gmail.com</p>
+            <p><ion-icon name="location-sharp"></ion-icon> Dessie, Amhara, Ethiopia</p>
+            <div id="Map"  ></div>
+
+            <script>
+              (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+                key: "YOUR_API_KEY",
+                v: "weekly",
+                // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+                // Add other bootstrap parameters as needed, using camel case.
+              });
+            </script>
+ <script>
+  // Initialize and add the map
+let map;
+
+async function initMap() {
+  // The location of Uluru
+  const position = { lat: -25.344, lng: 131.031 };
+  // Request needed libraries.
+  //@ts-ignore
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+  // The map, centered at Uluru
+  map = new Map(document.getElementById("Map"), {
+    zoom: 4,
+    center: position,
+    mapId: "DEMO_MAP_ID",
+  });
+
+  // The marker, positioned at Uluru
+  const marker = new AdvancedMarkerElement({
+    map: map,
+    position: position,
+    title: "Uluru",
+  });
+}
+
+initMap();
+  // The location of Uluru
+const position = { lat: -25.344, lng: 131.031 };
+// Request needed libraries.
+//@ts-ignore
+const { Map } = await google.maps.importLibrary("maps");
+const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+// The map, centered at Uluru
+map = new Map(document.getElementById("Map"), {
+  zoom: 4,
+  center: position,
+  mapId: "DEMO_MAP_ID",
+});
+ </script>
+          
+          </div>
+              
+            <div class="contact-form"> 
+             
+              
+              <form id="contactForm">
+                <h1>Contact <hr></h1>
+                 
+                <input type="text" id="name" name="name"placeholder="Name" required>
+        <br>
+               
+                <input type="email" id="email" name="email" placeholder="Email"  required>
+        <br>
+                <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
+        
+                <button type="submit">Send Email</button>
+            </form>
+        <script>document.addEventListener('DOMContentLoaded', () => {
+          emailjs.init('XPQV-I8_Rxlcf_0sG'); // Replace with your EmailJS user ID
+      
+          const form = document.getElementById('contactForm');
+      
+          form.addEventListener('submit', function(event) {
+              event.preventDefault();
+      
+              const formData = new FormData(form);
+      
+              emailjs.sendForm('Yservice_nzmhyyp', 'template_76iy3to', formData)
+                  .then(response => {
+                      alert('Email sent successfully!');
+                      form.reset();
+                  })
+                  .catch(error => {
+                      console.error('Error sending email:', error);
+                      alert('Failed to send email. Please try again later.');
+                  });
+          });
+      });
+      </script>
+            <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+            </div>
+          </div>
+        </section>
+        <br><br><br><br><br>
+        <section class="footer" style="left: 0; margin-left: -20px">
+
+        <div class="footer-info">
+          <h1><a href="index.html">ChemLab</a></h1>
+          <p>Copyright 2016 E.C. &copy;Leul. All rights reserved.</p>
+        </div>
+        <div class="footer-info">
+          <h3>Important Links <hr></h3>
+          <ul>
+            <li><a href="equpment.html">Equipments</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="equpment.html#ai">ChatGPT</a></li>
+            <li><a href="equpment.html#equpment-manager">Equipment Manager</a></li>
+          </ul>
+        </div>
+        <div class="footer-info">
+          <h3>Social Media <hr></h3>
+          <ul>
+            <li><a href="https://t.me/Leul_et"><ion-icon name="send"></ion-icon> </a></li>
+            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon> </a></li>
+            <li><a href="#"><ion-icon name="logo-github"></ion-icon ></a></li>
+            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-reddit"></ion-icon></a></li>
+             <li><a href="#"><ion-icon name="logo-youtube"></ion-icon></a></li>
+          </ul>
+        </div>
+        <div class="footer-info">
+          <h3>Subscribe <hr></h3>
+        <form action="#">
+          <input type="email" placeholder="email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        
+        </div>
+        
+        </section>
+     </section>
+</body>
+<script src="main.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
